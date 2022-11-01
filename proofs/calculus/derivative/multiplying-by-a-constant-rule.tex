@@ -1,0 +1,25 @@
+\subsection{Multiplying by a Constant Rule}
+
+Show that
+\[%
+  \odv{}{x}\left(cf(x)\right) = c\odv{}{x}\left(f(x)\right)
+.\]%
+
+\begin{proof}
+  Let $g(x) = c \times f(x)$, where $f(x)$ is a differentiable function.
+
+  Then, just find the derivative of $g(x)$ like so
+  \begin{align*}
+    \odv{}{x}\left(g(x)\right) &= \lim_{h \to 0} \frac{g(a+h) - g(a)}{h} \\
+                               &= \lim_{h \to 0} \frac{c \times f(a+h) - c \times (f(a))}{h} \\
+                               &= \lim_{h \to 0} \frac{c[f(a+h) - f(a)]}{h}
+  .\end{align*}
+  Using the limit law A3, we can factor out $c$ like so
+  \begin{align*}
+    c\lim_{h \to 0} \frac{f(a+h) - f(a)}{h}
+  .\end{align*}
+  From this, we conclude that
+  \[%
+    cf^{'}(x) = c\odv{}{x}\left(f(x)\right)
+  .\]%
+\end{proof}

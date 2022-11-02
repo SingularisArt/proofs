@@ -6,29 +6,19 @@ Show that
 .\]%
 
 \begin{proof}
-  Using the definition of the derivative, we get the following:
-  \[%
-    \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}
-  .\]%
-  We know that $f(x) = x^{n}$. We can expand using the binomial theorem
-  \[%
-    \lim_{h \to 0} \frac{\displaystyle(a + h)^{n} - a^{n}}{\displaystyle h} = \lim_{h \to 0} \frac{\displaystyle\sum_{k=0}^{n} {n \choose k} a^{k}h^{n - k} - \left(a^{n}\right)}{\displaystyle h}
-  .\]%
-  After we expand the series, we get the following
-  \[%
-    \lim_{h \to 0} \frac{\displaystyle\left[{n \choose 0} a^{n}h^{0} + {n \choose 1} a^{n-1}h^{1} + \cdots + {n \choose n-1} a^{1}h^{n-1} + {n \choose n} a^{0}h^{n}\right] - a^{n}}{\displaystyle h}
-  ,\]%
-  which then, simplifies to
-  \[%
-    \lim_{h \to 0} \frac{\displaystyle\left[na^{n-1}h + \frac{n(n-1)}{2}a^{n-2}h^{2} + \cdots + h^{n}\right]}{\displaystyle h}
-  .\]%
-  Each term contains at least one factor of $h$. Using this,
-  we can factor and simplify
+  In order to prove our desired claim, we let $f(x) = x^{n}$, where $f(x)$ is a
+  differentiable function.
+
   \begin{align*}
-    &\lim_{h \to 0} \frac{\displaystyle\cancel{h}\left[na^{n-1} + \frac{n(n-1)}{2}a^{n-2}h + \cdots + h^{n-1}\right]}{\cancel{\displaystyle h}} \\
-    &= \lim_{h \to 0} \left(na^{n-1} + \frac{n(n-1)}{2}a^{n-2}h + \cdots + h^{n-1} \right) \\
-    &= \left(na^{n-1} + \frac{n(n-1)}{2}a^{n-2}0 + \cdots + 0^{n-1}\right) \\
-    &= na^{n-1}
+    \odv{}{x}(x^{n}) &= \lim_{h \to 0} \frac{f(a + h) - f(a)}{h} \\
+                     &= \lim_{h \to 0} \frac{\left(a + h\right)^{n} - a^{n}}{h} \\
+                     &= \lim_{h \to 0} \frac{\displaystyle\sum_{k=0}^{n} {n \choose k} a^{k}h^{n - k} - \left(a^{n}\right)}{h} \\
+                     &=\lim_{h \to 0} \frac{\displaystyle\left({n \choose 0}h^{0} + {n \choose 1}a^{n-1}h^{1} + \cdots + {n \choose n}a^{0}h^{n}\right)}{h} \\
+                     &=\lim_{h \to 0} \frac{\displaystyle\left(na^{n-1}h + \frac{n(n-1)}{2}a^{n-2}h^{2} + \cdots + h^{n}\right)}{h} \\
+                     &=\lim_{h \to 0} \frac{\displaystyle\cancel{h}\left(na^{n-1} + \frac{n(n-1)}{2}a^{n-2}h + \cdots + h^{n-1}\right)}{\cancel{h}} \\
+                     &=\lim_{h \to 0} \left(na^{n-1} + \frac{n(n-1)}{2}a^{n-2}h + \cdots + h^{n-1} \right) \\
+                     &=\left(na^{n-1} + \frac{n(n-1)}{2}a^{n-2}0 + \cdots + 0^{n-1}\right) \\
+                     &=na^{n-1}
   .\end{align*}
   \[%
     \therefore \odv{}{x}\left(x^{n}\right) = nx^{n-1}
